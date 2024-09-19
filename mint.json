@@ -35,6 +35,11 @@
   ],
   "anchors": [
     {
+      "url": "https://neon.tech/docs",
+      "name": "Documentation",
+      "icon": "book-open-cover"
+    },
+    {
       "url": "api-reference",
       "name": "API Reference",
       "icon": "square-terminal",
