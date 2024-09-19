@@ -21,10 +21,6 @@
       "url": "https://neon.tech/api_spec/release/v2.json"
     },
     {
-      "name": "Documentation",
-      "url": "https://neon.tech/docs"
-    },
-    {
       "name": "Console",
       "url": "https://console.neon.tech"
     },
