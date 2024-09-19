@@ -1,11 +1,11 @@
 {
+  "name": "API Docs",
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "./favicon.png",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -17,75 +17,45 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
-  "tabs": [
+      "name": "OpenAPI Spec",
+      "url": "https://neon.tech/api_spec/release/v2.json"
+    },
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Documentation",
+      "url": "https://neon.tech/docs"
+    },
+    {
+      "name": "Console",
+      "url": "https://console.neon.tech"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com/invite/92vNTzKDGp"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "api-reference",
+      "name": "API Reference",
+      "icon": "square-terminal",
+      "openapi": "https://neon.tech/api_spec/release/v2.json"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Documentation",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/introduction",
+        "api-reference/use-cases",
+        "api-reference/authentication",
+        "api-reference/pagination",
+        "api-reference/path-parameters"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/neondatabase",
+    "github": "https://github.com/neondatabase",
+    "linkedin": "https://www.linkedin.com/company/neondatabase"
   }
 }

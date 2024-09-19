@@ -1,0 +1,38 @@
+---
+title: "Authentication"
+description: "Learn how to authenticate Neon API requests"
+---
+
+The Neon API requires that you include an API key token in an Authorization header in your API request.
+
+The Neon API uses _Bearer Token Authentication_, which means that you must format your Authorization header like this:
+
+`-H 'Authorization: Bearer $NEON_API_KEY'`
+
+For example:
+
+```curl
+curl 'https://console.neon.tech/api/v2/projects' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer $NEON_API_KEY' \
+  -H 'Content-Type: application/json' \
+```
+
+To try an API request in your browser from this page, enter your token in the **Bearer** prompt after clicking the **Try It** button on any Neon API endpoint, which you can select from the sidebar.
+
+[Get a list of projects](https://api-docs.neon.tech/reference/listprojects) is an easy endpoint to try, as it only requires an API key token. 
+
+## Neon API keys
+
+A Neon API key is a randomly-generated 64-bit token that remains valid until it is revoked. 
+
+To create an API key:
+
+1. Navigate to the [API Keys](https://console.neon.tech/app/settings/api-keys) page in the Neon Console.
+2. Click **Create new API key**.
+3. Enter a name for the API key.
+4. Click **Create** and copy the generated token.
+
+Store your token in a safe location. You will not be able to view or copy the token again after leaving the **API keys** page in the Neon Console. 
+
+For more information about managing Neon API keys, refer to [Manage API keys](https://neon.tech/docs/manage/api-keys) in the _Neon documentation_.

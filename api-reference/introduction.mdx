@@ -1,33 +1,47 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Get started with the Neon API"
+description: "This page will help you get started with the Neon API"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Introduction
 
-## Welcome
+The Neon API allows you to manage Neon programmatically. With the Neon API, you can create and manage all objects in your Neon account, including:
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+- API keys
+- Projects
+- Branches
+- Compute endpoints
+- Databases
+- Roles
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+> Databases and roles belong to branches and are therefore managed with _Branch_ endpoints. Look under **Branch** in the sidebar for database and role endpoints.
 
-## Authentication
+For information about the Neon objects listed above, refer to [Overview of the Neon object hierarchy](https://neon.tech/docs/manage/overview), in the _Neon documentation_.
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Neon API base URL
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+The base URL for a Neon API request is:
+
+`https://console.neon.tech/api/v2/`
+
+Append a Neon API endpoint path to the base URL to construct the full URL for a request. For example:
+
+`https://console.neon.tech/api/v2/projects/{project_id}/branches/{branch_id}`
+
+## Neon API examples
+
+For Neon API examples, refer to the following topics in the _Neon documentation_:
+
+- [Manage API keys with the Neon API](https://neon.tech/docs/manage/api-keys#manage-api-keys-with-the-neon-api)
+- [Manage projects with the Neon API](https://neon.tech/docs/manage/projects#manage-projects-with-the-neon-api)
+- [Manage branches with the Neon API](https://neon.tech/docs/manage/branches#branching-with-the-neon-api)
+- [Manage compute endpoints with the Neon API](https://neon.tech/docs/manage/endpoints#manage-compute-endpoints-with-the-neon-api)
+- [Manage roles with the Neon API](https://neon.tech/docs/manage/roles#manage-roles-with-the-neon-api)
+- [Manage databases with the Neon API](https://neon.tech/docs/manage/databases#manage-databases-with-the-neon-api)
+- [View operations with the Neon API](https://neon.tech/docs/manage/operations#view-operations-with-the-neon-api)
+
+> When using the Neon API programmatically, you can poll the operation status to ensure that an operation is finished before proceeding with the next API request. For more information, see [Poll operation status](https://neon.tech/docs/manage/operations#poll-operation-status).
+
+## Need help?
+
+Send a request to [support@neon.tech](mailto:support@neon.tech), or join the [Neon community forum](https://community.neon.tech/).

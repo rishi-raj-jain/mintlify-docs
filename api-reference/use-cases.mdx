@@ -1,0 +1,14 @@
+---
+title: "Use cases"
+description: "How you can use the Neon API"
+---
+
+The Neon API can be used in a number of ways. Here are some examples:
+
+- Programmatically create, update, or delete any Neon object including API keys, projects, branches, compute endpoints, databases, and roles.
+- Automatically create database branches in your CI/CD pipeline. For example, create a database branch for each preview deployment by calling the [Create branch](https://api-docs.neon.tech/reference/createprojectbranch) endpoint from a GitHub Action each time you create a pull request in your GitHub repository. For some sample GitHub actions you can use with Neon, see [Automate branching with GitHub Actions](https://neon.tech/docs/guides/branching-github-actions).
+- Programmatically create new database environments for testing. With Neon's branching capability, you can instantly create a copy-on-write clone of your production database with a dedicated compute endpoint. When your testing is complete, you can tear down the environment just as quickly. 
+- Retrieve details about any object in Neon including projects, branches, compute endpoints, databases, and roles.
+- Check the status of any request using [Operation](https://api-docs.neon.tech/reference/getprojectoperation) endpoints.
+
+You can access the Neon API from any application capable of issuing an HTTP API request.

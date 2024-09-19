@@ -1,0 +1,84 @@
+---
+title: "Pagination"
+description: "How to paginate responses when requesting a list"
+---
+
+Neon supports pagination when requesting a list of projects or operations. Pagination allows you request part of a list by specifying a `limit` in the request. Paginated endpoints include a `cursor` value in the response body.  You can specify the `cursor` value in the next request to retrieve the next part of the list. Using this technique, you can continue to make requests to receive the whole list (or just the parts you require).
+
+## Paginated endpoints
+
+- [Get a list of projects](https://api-docs.neon.tech/reference/listprojects)
+- [Get a list of operations](https://api-docs.neon.tech/reference/listprojectoperations)
+
+## Pagination parameters
+
+Each paginated endpoint accepts the following request parameters:
+
+| Parameter | Type   | Description                                                                                                                                                                                                                                                    |
+| :-------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`   | string | The number of items to return in the response. For projects, minimum, default, and maximum values are `1`, `10`, and `100`, respectively. For operations the minimum and maximum values are `1` and `1000` (all operations are listed if no limit is defined). |
+| `cursor`  | string | The `cursor` value from the previous request's response. Specify this value in the in the "next" request to get the next batch of items.                                                                                                                       |
+
+## Pagination example
+
+To paginate responses, issue an initial request with a `limit` value. For brevity, the limit is set to 1 in the following _list operations_ example.
+
+```bash
+curl 'https://console.neon.tech/api/v2/projects/autumn-disk-484331/operations?limit=1' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer $NEON_API_KEY'
+```
+
+Response:
+
+```json
+{
+  "operations": [
+    {
+      "id": "97c7a650-e4ff-43d7-8c58-4c67f5050167",
+      "project_id": "autumn-disk-484331",
+      "branch_id": "br-wispy-dew-591433",
+      "endpoint_id": "ep-orange-art-714542",
+      "action": "check_availability",
+      "status": "finished",
+      "failures_count": 0,
+      "created_at": "2022-12-09T08:47:52Z",
+      "updated_at": "2022-12-09T08:47:56Z"
+    }
+  ],
+  "pagination": {
+    "cursor": "2022-12-09T08:47:52.20417Z"
+  }
+}
+```
+
+To list the next page of operations, add the `cursor` value returned in the response body of the initial or previous request and a `limit` value for the next page.
+
+```bash
+curl 'https://console.neon.tech/api/v2/projects/autumn-disk-484331/operations?cursor=2022-12-09T08%3A47%3A52.20417Z&limit=1' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer $NEON_API_KEY'
+```
+
+Response:
+
+```json
+{
+  "operations": [
+    {
+      "id": "0f3daf10-2544-425c-86d3-9a9932ab25b9",
+      "project_id": "autumn-disk-484331",
+      "branch_id": "br-wispy-dew-591433",
+      "endpoint_id": "ep-orange-art-714542",
+      "action": "check_availability",
+      "status": "finished",
+      "failures_count": 0,
+      "created_at": "2022-12-09T04:47:39Z",
+      "updated_at": "2022-12-09T04:47:44Z"
+    }
+  ],
+  "pagination": {
+    "cursor": "2022-12-09T04:47:39.797163Z"
+  }
+}
+```

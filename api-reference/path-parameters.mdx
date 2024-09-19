@@ -1,0 +1,16 @@
+---
+title: "Path parameters"
+description: "How to retrieve Neon API path parameter values"
+---
+
+Some Neon API endpoints require specifying path parameter values, which you can find in the Neon Console or by listing objects with a Neon API call.
+
+The following list describes how to retrieve commonly required path parameter values using the Neon API. Look for the required value in the response body after issuing the API call.
+
+- `key_id`: Retrieve Neon API `key_id` values by listing the API keys for your Neon account. See [Get a list of API keys](/api-reference/api-key/get-a-list-of-api-keys). Only the `key_id`is returned, not the 64-bit API key token, which is only visible when initially created. If you've lost an API token, you have to create a new one. See [Create an API key](/api-reference/api-key/create-an-api-key).
+- `project_id`: Retrieve a `project_id` value by listing the projects for your Neon account. See [Get a list of projects](ref:listprojects).
+- `branch_id`: Retrieve a `branch_id` value by listing the project's branches. See [Get a list of branches](ref:listprojectbranches).
+- `operation_id`: Retrieve an `operation_id`value by listing operations for the project. See [Get a list of operations](ref:listprojectoperations).
+- `database_name`: Retrieve a `database_name` value by listing the databases for a branch. See [Get a list of databases](ref:listprojectbranchdatabases).
+- `role_name`: Retrieve a `role_name` value by listing the roles for a branch. See [Get a list of roles](ref:listprojectbranchroles).
+- `endpoint_id`: Retrieve an `endpoint_id` value by listing your project's compute endpoints. See [Get a list of compute endpoints](ref:listprojectendpoints).
